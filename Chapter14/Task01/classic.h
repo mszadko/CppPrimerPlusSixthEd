@@ -2,11 +2,11 @@
 class Classic : public Cd
 {
 	private:
-char legendarySong [25];
+char legendarySong [50];
 	public:
-	Classic(char *s1,char *s2,char *s3, int n,double x);
-	Classic(const Classic*c);
+	Classic(char *s1=(char*)"none",char *s2=(char*)"none",char *s3=(char*)"none", int n=-1,double x=-1.0);
+	//Classic(const Classic*c);
 	virtual ~Classic();// virtual keyword is optional but it is a good practice to use it in every derived class
-	Classic& operator=(const Classic&);
+	//Classic& operator=(const Classic&);
 	virtual void Report() const;
 };
