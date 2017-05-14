@@ -95,6 +95,7 @@ int main()
 void parseWordsFromTxtFile(const vector<string>& wordlist, const string& filePath)
 {
 	using std::fstream;
+	//Using RTTI right here cuz i want to edit wordlist which is constant
 	vector<string>& nonConstVector= const_cast<vector<string>&> (wordlist);
 	fstream fileReader;
 	fileReader.open(filePath);
