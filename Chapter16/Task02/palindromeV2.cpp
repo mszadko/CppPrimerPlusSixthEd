@@ -26,7 +26,7 @@ bool checkIfStringIsPalindrome(std::string& s)
 	//this part removes whitespaces and convert all upper cases to lower cases
 	for(std::string::iterator beg = s.begin(); beg!=s.end();/*can't increment here cuz if erase will be invoked it will put beg to next char*/)
 	{
-		if(isupper(*beg))
+		if(isupper(*beg))	
 			*beg=tolower(*beg);
 		else if(isspace(*beg))
 			s.erase(beg);//erase a whitespace and reduce str length
@@ -34,6 +34,10 @@ bool checkIfStringIsPalindrome(std::string& s)
 			beg++;
 		
 	}
+	//or i could just do another string and add to it only alphanumerics from source like a smart person :) 
+	//for_each char in s
+	//if isalnum(char)
+	//tempStringVariable += tolower(char)
 	
 	size_t stringLenght = s.length();
 	//this part checks if s is a palindrome
