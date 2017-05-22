@@ -7,7 +7,7 @@ int main()
 	cout<<"Enter data, program will count how many characters you entered before $ sing : ";
 	char ch;
 	int counter = 0;
-	while(cin.get(ch) && ch!='$')
+	while(cin.get(ch) && ch!='$')//i could use peek() so i don't have to put dollar sing back to the buffer explicitly
 	{
 		cout<<ch;
 		counter++;
