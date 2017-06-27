@@ -13,6 +13,7 @@ using std::for_each;
 using std::string;
 
 void readGuestFile(vector<string>& guests);
+void saveGuestFile(vector<string> const& guests);
 inline void show(string const & s)
 {
 	cout<<s<<", ";
@@ -47,7 +48,7 @@ int main()
 	friendsOfBoth.erase(end,friendsOfBoth.end());
 	cout<<"Guest list:\n";
 	for_each(friendsOfBoth.begin(),friendsOfBoth.end(),show);	cout<<"\n";
-	
+	saveGuestFile(friendsOfBoth);
 	return 0;
 }
 
@@ -72,5 +73,17 @@ void readGuestFile(vector<string>& guests)
 				break;
 			guests.push_back(guestName);
 		}
+	}
+}
+void saveGuestFile(vector<string> const& guests)
+{
+	std::string filePath;
+	std::cout<<"Please enter destination of your friends list:";
+	std::cin>>filePath;
+	std::ofstream output(filePath);
+	int n = guests.size();
+	for(size_t i = 0; i<n;i++)
+	{
+		output<<guests[i]<<'\n';
 	}
 }
