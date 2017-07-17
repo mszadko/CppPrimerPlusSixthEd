@@ -21,7 +21,7 @@ int main(int argc, char* argv[])
 		exit(EXIT_FAILURE);
 	}
 	if(DoesFileExist(argv[1]))
-	{
+	{ 
 		std::ifstream file_input(argv[1]);
 		{
 			int employee_type;
