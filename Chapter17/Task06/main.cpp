@@ -11,7 +11,6 @@ bool inline DoesFileExist(std::string const file_path)
 	std::ifstream file_input(file_path);
 	return file_input.good();
 }
-
 int main(int argc, char* argv[])
 {
 	int count = 0;
@@ -77,7 +76,6 @@ int main(int argc, char* argv[])
 		std::cerr<<"ERROR. Cannot open file in write mode.\n";	
 		exit(EXIT_FAILURE);
 	}
-	
 	{//this part asks for new employees and their personal data.
 		int employee_type = classkind::Employee;
 		while(employee_type && count < MAX)
@@ -116,13 +114,10 @@ int main(int argc, char* argv[])
 			pc[count++]->writeAll(file_output);
 		}
 	}
-	
 	for(size_t i = 0; i<count; i++)
 	{
 		pc[i]->showAll();
 		delete pc[i];
 	}
-	
-	
 	return 0;
 }
